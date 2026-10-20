@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Welcome to Zona360.">
+  <title>Zona360</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: #101827;
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   sans-serif;
+    }
+
+    main {
+      width: 100%;
+      max-width: 680px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: clamp(42px, 9vw, 68px);
+      font-weight: 800;
+      letter-spacing: -3px;
+    }
+
+    .logo span { color: #38bdf8; }
+
+    p {
+      color: #b8c4d6;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .links {
+      display: grid;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .links a {
+      display: block;
+      padding: 17px 20px;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .2s, border-color .2s;
+    }
+
+    .links a:hover {
+      background: #1e293b;
+      border-color: #38bdf8;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: #8190a5;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo">ZONA<span>360</span></div>
+    <p>A central place to discover our projects and services.</p>
+
+    <nav class="links" aria-label="Our websites">
+      <!-- Replace these example links with your real websites. -->
+      <a href="https://odiamemas.com">Ódiame Más</a>
+    </nav>
+
+    <footer>&copy; 2026 Zona360. All rights reserved.</footer>
+  </main>
+</body>
+</html>
