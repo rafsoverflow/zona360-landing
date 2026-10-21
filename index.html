@@ -1,47 +1,54 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zona360. Discover our projects and services.">
+  <meta name="description" content="Zona360 es un grupo de medios deportivos dedicado a la NFL y al fútbol mexicano.">
   <meta name="theme-color" content="#101827">
-  <title>Zona360 | Our Projects</title>
+  <title>Zona360 | Grupo de Medios Deportivos</title>
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    :root {
+      color-scheme: dark;
+      --background: #101827;
+      --card: #151f30;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #a7b4c7;
+      --accent: #38bdf8;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 55px 24px 30px;
-      background: #101827;
-      color: #f8fafc;
+      padding: 48px 20px 28px;
+      background: var(--background);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     main {
       width: 100%;
       max-width: 760px;
-      margin: auto;
+      margin: 0 auto;
     }
 
     header {
+      margin-bottom: 46px;
       text-align: center;
-      margin-bottom: 48px;
     }
 
     .brand-logo {
       display: block;
-      width: 140px;
-      height: 140px;
-      object-fit: contain;
+      width: 132px;
+      height: 132px;
       margin: 0 auto 16px;
+      object-fit: contain;
     }
 
     .brand-name {
@@ -52,60 +59,66 @@
     }
 
     .brand-name span {
-      color: #38bdf8;
+      color: var(--accent);
     }
 
-    header p {
-      margin-top: 16px;
+    .tagline {
+      max-width: 500px;
+      margin: 16px auto 0;
       color: #b8c4d6;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.7;
     }
 
     .section-title {
-      margin: 0 0 18px;
-      color: #94a3b8;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      margin: 0 0 8px;
+      color: #f8fafc;
+      font-size: 22px;
+      font-weight: 750;
+    }
+
+    .section-description {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
     }
 
     .projects {
       display: grid;
-      gap: 16px;
+      gap: 14px;
     }
 
     .project {
       display: flex;
       align-items: center;
-      gap: 20px;
-      min-height: 120px;
-      padding: 20px 24px;
-      background: #151f30;
-      border: 1px solid #334155;
+      gap: 18px;
+      min-height: 112px;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
       border-radius: 16px;
+      background: var(--card);
       color: inherit;
       text-decoration: none;
-      transition: transform .2s, background .2s, border-color .2s;
+      transition: background .2s, border-color .2s, transform .2s;
     }
 
-    .project:hover {
-      transform: translateY(-3px);
+    a.project:hover {
+      transform: translateY(-2px);
       background: #1e293b;
-      border-color: #38bdf8;
+      border-color: var(--accent);
     }
 
     .project-image {
-      width: 76px;
-      height: 76px;
-      flex-shrink: 0;
       display: grid;
       place-items: center;
+      width: 74px;
+      height: 74px;
+      flex-shrink: 0;
       overflow: hidden;
-      background: #fff;
+      padding: 6px;
       border-radius: 12px;
-      padding: 7px;
+      background: #fff;
     }
 
     .project-image img {
@@ -115,67 +128,103 @@
       object-fit: contain;
     }
 
+    .project-image.placeholder {
+      background: #202d40;
+      border: 1px solid #40516a;
+    }
+
+    .project-image.placeholder svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     .project-info {
       flex: 1;
       min-width: 0;
     }
 
-    .project-info h2 {
+    .project-info h3 {
       margin: 0 0 7px;
-      font-size: 21px;
-      font-weight: 700;
+      font-size: 19px;
+      font-weight: 750;
+      line-height: 1.35;
     }
 
     .project-info p {
       margin: 0;
-      color: #a7b4c7;
-      font-size: 14px;
+      color: var(--muted);
+      font-size: 13px;
       line-height: 1.6;
     }
 
     .arrow {
-      color: #38bdf8;
-      font-size: 25px;
       flex-shrink: 0;
+      color: var(--accent);
+      font-size: 24px;
+    }
+
+    .brand-label {
+      flex-shrink: 0;
+      color: #7f90a8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     footer {
-      margin-top: 55px;
-      text-align: center;
+      margin-top: 46px;
       color: #8190a5;
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.8;
+      text-align: center;
     }
 
     @media (max-width: 480px) {
       body {
-        padding: 40px 16px 24px;
-      }
-
-      .brand-logo {
-        width: 110px;
-        height: 110px;
+        padding: 34px 15px 24px;
       }
 
       header {
         margin-bottom: 36px;
       }
 
+      .brand-logo {
+        width: 108px;
+        height: 108px;
+      }
+
       .project {
-        gap: 14px;
-        padding: 16px;
+        gap: 13px;
+        min-height: 98px;
+        padding: 14px;
       }
 
       .project-image {
-        width: 62px;
-        height: 62px;
+        width: 60px;
+        height: 60px;
       }
 
-      .project-info h2 {
-        font-size: 18px;
+      .project-info h3 {
+        font-size: 16px;
       }
 
       .project-info p {
-        font-size: 13px;
+        font-size: 12px;
+      }
+
+      .brand-label {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -184,52 +233,112 @@
 <body>
   <main>
     <header>
-      <img class="brand-logo" src="/logo.png" alt="Zona360 logo">
+      <img class="brand-logo" src="/logo.png" alt="Logo de Zona360">
+
       <div class="brand-name">ZONA<span>360</span></div>
-      <p>A central place to discover our projects and services.</p>
+
+      <p class="tagline">
+        Un grupo de medios deportivos que conecta a los aficionados
+        con sus equipos, sus historias y su pasión.
+      </p>
     </header>
 
     <section aria-labelledby="projects-heading">
-      <h1 id="projects-heading" class="section-title">Our Projects</h1>
+      <h1 class="section-title" id="projects-heading">Nuestros medios</h1>
+      <p class="section-description">
+        Cobertura deportiva especializada para cada afición.
+      </p>
 
-      <nav class="projects" aria-label="Our websites">
+      <nav class="projects" aria-label="Marcas de Zona360">
 
+        <!-- Yarda360: clickable -->
+        <a class="project"
+           href="https://yarda360.com"
+           target="_blank"
+           rel="noopener noreferrer">
+          <div class="project-image">
+            <img src="/logo.png" alt="Logo de Yarda360">
+          </div>
+          <div class="project-info">
+            <h3>Yarda360</h3>
+            <p>Cobertura de fútbol americano de la NFL en español.</p>
+          </div>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <!-- América 360: clickable -->
         <a class="project"
            href="https://odiamemas.com"
            target="_blank"
            rel="noopener noreferrer">
           <div class="project-image">
             <img src="https://www.odiamemas.com/imgs/logo.png"
-                 alt="Ódiame Más logo">
+                 alt="Logo de América 360 - Ódiame Más">
           </div>
           <div class="project-info">
-            <h2>Ódiame Más</h2>
-            <p>Club América. Historia, comunidad y pasión.</p>
+            <h3>América 360 - Ódiame Más</h3>
+            <p>Club América: historia, actualidad, análisis y comunidad.</p>
           </div>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
 
-        
-<a class="project"
-   href="https://yarda360.com"
-   target="_blank"
-   rel="noopener noreferrer">
-  <div class="project-image">
-    <img src="/logo.png" alt="Yarda360 logo">
-  </div>
-  <div class="project-info">
-    <h2>Yarda360</h2>
-    <p>¡Descubre Yarda360! Cobertura de fútbol americano de la NFL en español.</p>
-  </div>
-  <span class="arrow" aria-hidden="true">↗</span>
-</a>
+        <!-- GB Packers 360: placeholder, not clickable -->
+        <div class="project">
+          <div class="project-image placeholder">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional GB Packers 360">
+              <rect width="100" height="100" rx="12" fill="#173f35"/>
+              <circle cx="50" cy="43" r="29" fill="#fff" stroke="#eabf42" stroke-width="4"/>
+              <text x="50" y="49" text-anchor="middle" font-size="20" font-weight="800" fill="#173f35">GB</text>
+              <text x="50" y="86" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
+            </svg>
+          </div>
+          <div class="project-info">
+            <h3>GB Packers 360</h3>
+            <p>Noticias, análisis y actualidad de Green Bay Packers.</p>
+          </div>
+          <span class="brand-label">NFL</span>
+        </div>
 
+        <!-- SF 49ers 360: placeholder, not clickable -->
+        <div class="project">
+          <div class="project-image placeholder">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional SF 49ers 360">
+              <rect width="100" height="100" rx="12" fill="#8c252b"/>
+              <circle cx="50" cy="43" r="29" fill="#fff" stroke="#c7a66a" stroke-width="4"/>
+              <text x="50" y="49" text-anchor="middle" font-size="19" font-weight="800" fill="#8c252b">SF</text>
+              <text x="50" y="86" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
+            </svg>
+          </div>
+          <div class="project-info">
+            <h3>SF 49ers 360</h3>
+            <p>Noticias, análisis y actualidad de San Francisco 49ers.</p>
+          </div>
+          <span class="brand-label">NFL</span>
+        </div>
+
+        <!-- Fútbol Mexicano 360: placeholder, not clickable -->
+        <div class="project">
+          <div class="project-image placeholder">
+            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional Fútbol Mexicano 360">
+              <rect width="100" height="100" rx="12" fill="#174b38"/>
+              <circle cx="50" cy="43" r="28" fill="#fff" stroke="#d5dce5" stroke-width="3"/>
+              <path d="M50 27 L64 37 L59 53 L41 53 L36 37 Z" fill="#174b38"/>
+              <path d="M36 37 L24 34 L21 48 L32 57 L41 53 M64 37 L76 34 L79 48 L68 57 L59 53 M32 57 L35 70 L50 76 L65 70 L68 57" fill="none" stroke="#174b38" stroke-width="4" stroke-linejoin="round"/>
+              <text x="50" y="91" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
+            </svg>
+          </div>
+          <div class="project-info">
+            <h3>Fútbol Mexicano 360</h3>
+            <p>La Liga MX, sus clubes, sus historias y el fútbol de México.</p>
+          </div>
+          <span class="brand-label">Fútbol</span>
+        </div>
 
       </nav>
     </section>
 
     <footer>
-      &copy; 2026 Zona360. All rights reserved.
+      &copy; 2026 Zona360. Todos los derechos reservados.
     </footer>
   </main>
 </body>
