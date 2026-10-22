@@ -1,221 +1,329 @@
-
+```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Zona360 es un grupo de medios deportivos dedicado a la NFL y al fútbol mexicano.">
-  <meta name="theme-color" content="#101827">
-  <title>Zona360 | Grupo de Medios Deportivos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+
+  <title>Zona 360 | Sports Media Network</title>
+
+  <meta
+    name="description"
+    content="Zona 360 Sports Media Network. Follow our coverage of Mexican football, Club América, and the NFL."
+  >
 
   <style>
+    :root {
+      --bg: #080d18;
+      --surface: #111a2b;
+      --surface-hover: #17243a;
+      --border: #26344b;
+      --text: #f4f7fc;
+      --muted: #a7b3c7;
+      --accent: #f5c451;
+      --blue: #65a8ff;
+    }
+
     * {
       box-sizing: border-box;
     }
 
-    :root {
-      color-scheme: dark;
-      --background: #101827;
-      --card: #151f30;
-      --border: #334155;
-      --text: #f8fafc;
-      --muted: #a7b4c7;
-      --accent: #38bdf8;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      padding: 48px 20px 28px;
-      background: var(--background);
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(39, 78, 135, 0.24),
+          transparent 55%
+        ),
+        var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
     }
 
-    main {
-      width: 100%;
-      max-width: 760px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 36px));
       margin: 0 auto;
     }
 
     header {
-      margin-bottom: 46px;
+      padding: 54px 0 38px;
       text-align: center;
     }
 
-    .brand-logo {
+    .main-logo {
       display: block;
-      width: 132px;
-      height: 132px;
-      margin: 0 auto 16px;
+      width: min(230px, 65%);
+      max-height: 180px;
       object-fit: contain;
+      margin: 0 auto 22px;
     }
 
-    .brand-name {
-      font-size: clamp(42px, 9vw, 68px);
-      font-weight: 800;
-      letter-spacing: -3px;
-      line-height: 1.1;
-    }
-
-    .brand-name span {
-      color: var(--accent);
-    }
-
-    .tagline {
-      max-width: 500px;
-      margin: 16px auto 0;
-      color: #b8c4d6;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .section-title {
+    .eyebrow {
       margin: 0 0 8px;
-      color: #f8fafc;
-      font-size: 22px;
-      font-weight: 750;
-    }
-
-    .section-description {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .projects {
-      display: grid;
-      gap: 14px;
-    }
-
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      min-height: 112px;
-      padding: 18px 20px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: var(--card);
-      color: inherit;
-      text-decoration: none;
-      transition: background .2s, border-color .2s, transform .2s;
-    }
-
-    a.project:hover {
-      transform: translateY(-2px);
-      background: #1e293b;
-      border-color: var(--accent);
-    }
-
-    .project-image {
-      display: grid;
-      place-items: center;
-      width: 74px;
-      height: 74px;
-      flex-shrink: 0;
-      overflow: hidden;
-      padding: 6px;
-      border-radius: 12px;
-      background: #fff;
-    }
-
-    .project-image img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .project-image.placeholder {
-      background: #202d40;
-      border: 1px solid #40516a;
-    }
-
-    .project-image.placeholder svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .project-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .project-info h3 {
-      margin: 0 0 7px;
-      font-size: 19px;
-      font-weight: 750;
-      line-height: 1.35;
-    }
-
-    .project-info p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .arrow {
-      flex-shrink: 0;
       color: var(--accent);
-      font-size: 24px;
-    }
-
-    .brand-label {
-      flex-shrink: 0;
-      color: #7f90a8;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    footer {
-      margin-top: 46px;
-      color: #8190a5;
-      font-size: 12px;
-      line-height: 1.8;
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 18px 0 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -0.025em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .media-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding-bottom: 54px;
+    }
+
+    .media-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(
+        145deg,
+        rgba(22, 34, 54, 0.98),
+        rgba(13, 21, 36, 0.98)
+      );
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .media-card:hover {
+      transform: translateY(-3px);
+      border-color: #526b91;
+      background: linear-gradient(
+        145deg,
+        var(--surface-hover),
+        var(--surface)
+      );
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex: 0 0 76px;
+      align-items: center;
+      justify-content: center;
+      width: 76px;
+      height: 76px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: #0a1221;
+      color: var(--accent);
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
       text-align: center;
     }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 34px 15px 24px;
-      }
+    .brand-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      object-fit: contain;
+    }
 
+    .brand-logo.placeholder {
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(101, 168, 255, 0.2),
+          transparent 65%
+        ),
+        #0a1221;
+    }
+
+    .brand-info {
+      min-width: 0;
+    }
+
+    .brand-info h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.3;
+    }
+
+    .brand-type {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .description {
+      flex-grow: 1;
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 42px;
+      padding: 9px 13px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .social-link:hover {
+      border-color: #627a9d;
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .social-link svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .social-link.facebook svg {
+      color: #78aaff;
+    }
+
+    .social-link.instagram svg {
+      color: #f5a1cf;
+    }
+
+    .social-link.website svg {
+      color: var(--accent);
+    }
+
+    .network-note {
+      margin: 0 0 54px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(17, 26, 43, 0.75);
+      text-align: center;
+    }
+
+    .network-note h2 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .network-note p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    footer {
+      padding: 25px 0 35px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 680px) {
       header {
-        margin-bottom: 36px;
+        padding-top: 38px;
       }
 
-      .brand-logo {
-        width: 108px;
-        height: 108px;
+      .media-list {
+        grid-template-columns: 1fr;
+        gap: 14px;
       }
 
-      .project {
-        gap: 13px;
-        min-height: 98px;
-        padding: 14px;
+      .media-card {
+        padding: 18px;
       }
 
-      .project-image {
-        width: 60px;
-        height: 60px;
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 4px;
       }
 
-      .project-info h3 {
-        font-size: 16px;
-      }
-
-      .project-info p {
-        font-size: 12px;
-      }
-
-      .brand-label {
-        display: none;
+      .network-note {
+        padding: 20px;
       }
     }
 
@@ -223,123 +331,371 @@
       *,
       *::before,
       *::after {
-        transition: none !important;
         scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <header>
-      <img class="brand-logo" src="/logo.png" alt="Logo de Zona360">
 
-      <div class="brand-name">ZONA<span>360</span></div>
+  <header class="container">
+    <img
+      class="main-logo"
+      src="/logo.png"
+      alt="Zona 360 logo"
+      onerror="this.style.display='none'"
+    >
 
-      <p class="tagline">
-        Un grupo de medios deportivos que conecta a los aficionados
-        con sus equipos, sus historias y su pasión.
-      </p>
-    </header>
+    <p class="eyebrow">Sports Media Network</p>
+    <h1>Zona 360</h1>
 
-    <section aria-labelledby="projects-heading">
-      <h1 class="section-title" id="projects-heading">Nuestros medios</h1>
-      <p class="section-description">
-        Cobertura deportiva especializada para cada afición.
-      </p>
+    <p class="intro">
+      One network. Multiple perspectives. From Mexican football to the NFL,
+      follow the teams, rivalries and stories that matter.
+    </p>
+  </header>
 
-      <nav class="projects" aria-label="Marcas de Zona360">
+  <main class="container">
 
-        <!-- Yarda360: clickable -->
-        <a class="project"
-           href="https://yarda360.com"
-           target="_blank"
-           rel="noopener noreferrer">
-          <div class="project-image">
-            <img src="/logo.png" alt="Logo de Yarda360">
+    <div class="section-heading">
+      <h2>Our Media Brands</h2>
+      <p>Choose your team, sport or community.</p>
+    </div>
+
+    <section class="media-list">
+
+      <!-- ZONA 360 -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo">
+            <img src="/logo.png" alt="Zona 360 logo">
           </div>
-          <div class="project-info">
-            <h3>Yarda360</h3>
-            <p>Cobertura de fútbol americano de la NFL en español.</p>
-          </div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
 
-        <!-- América 360: clickable -->
-        <a class="project"
-           href="https://odiamemas.com"
-           target="_blank"
-           rel="noopener noreferrer">
-          <div class="project-image">
-            <img src="https://www.odiamemas.com/imgs/logo.png"
-                 alt="Logo de América 360 - Ódiame Más">
+          <div class="brand-info">
+            <h3>Zona 360 - Deportes</h3>
+            <span class="brand-type">Main Sports Network</span>
           </div>
-          <div class="project-info">
-            <h3>América 360 - Ódiame Más</h3>
-            <p>Club América: historia, actualidad, análisis y comunidad.</p>
-          </div>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
-
-        <!-- GB Packers 360: placeholder, not clickable -->
-        <div class="project">
-          <div class="project-image placeholder">
-            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional GB Packers 360">
-              <rect width="100" height="100" rx="12" fill="#173f35"/>
-              <circle cx="50" cy="43" r="29" fill="#fff" stroke="#eabf42" stroke-width="4"/>
-              <text x="50" y="49" text-anchor="middle" font-size="20" font-weight="800" fill="#173f35">GB</text>
-              <text x="50" y="86" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
-            </svg>
-          </div>
-          <div class="project-info">
-            <h3>GB Packers 360</h3>
-            <p>Noticias, análisis y actualidad de Green Bay Packers.</p>
-          </div>
-          <span class="brand-label">NFL</span>
         </div>
 
-        <!-- SF 49ers 360: placeholder, not clickable -->
-        <div class="project">
-          <div class="project-image placeholder">
-            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional SF 49ers 360">
-              <rect width="100" height="100" rx="12" fill="#8c252b"/>
-              <circle cx="50" cy="43" r="29" fill="#fff" stroke="#c7a66a" stroke-width="4"/>
-              <text x="50" y="49" text-anchor="middle" font-size="19" font-weight="800" fill="#8c252b">SF</text>
-              <text x="50" y="86" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
+        <p class="description">
+          Your home for sports news, opinions, highlights and stories from
+          across the sporting world.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/search/top?q=Zona%20360%20Deportes"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Zona 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
             </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/zona360.deportes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Zona 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
+      <!-- YARDA 360 -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo">
+            <img src="/logo.png" alt="Yarda 360 logo">
           </div>
-          <div class="project-info">
+
+          <div class="brand-info">
+            <h3>Yarda 360</h3>
+            <span class="brand-type">American Football</span>
+          </div>
+        </div>
+
+        <p class="description">
+          NFL news, analysis, game-day coverage and everything happening
+          around American football.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link website"
+            href="https://yarda360.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+            </svg>
+            Website
+          </a>
+
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/search/top?q=Yarda%20360"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Yarda 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/yarda360/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Yarda 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
+      <!-- SF 49ERS 360 -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo placeholder">SF<br>49ERS<br>360</div>
+
+          <div class="brand-info">
             <h3>SF 49ers 360</h3>
-            <p>Noticias, análisis y actualidad de San Francisco 49ers.</p>
+            <span class="brand-type">San Francisco 49ers</span>
           </div>
-          <span class="brand-label">NFL</span>
         </div>
 
-        <!-- Fútbol Mexicano 360: placeholder, not clickable -->
-        <div class="project">
-          <div class="project-image placeholder">
-            <svg viewBox="0 0 100 100" role="img" aria-label="Marcador provisional Fútbol Mexicano 360">
-              <rect width="100" height="100" rx="12" fill="#174b38"/>
-              <circle cx="50" cy="43" r="28" fill="#fff" stroke="#d5dce5" stroke-width="3"/>
-              <path d="M50 27 L64 37 L59 53 L41 53 L36 37 Z" fill="#174b38"/>
-              <path d="M36 37 L24 34 L21 48 L32 57 L41 53 M64 37 L76 34 L79 48 L68 57 L59 53 M32 57 L35 70 L50 76 L65 70 L68 57" fill="none" stroke="#174b38" stroke-width="4" stroke-linejoin="round"/>
-              <text x="50" y="91" text-anchor="middle" font-size="11" font-weight="800" fill="#fff">360</text>
+        <p class="description">
+          Dedicated coverage of the San Francisco 49ers, including team news,
+          game reactions, analysis and fan discussion.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/search/top?q=SF%2049ers%20360"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="SF 49ers 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
             </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/sf49ers360/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="SF 49ers 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
+      <!-- GB PACKERS 360 -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo placeholder">GB<br>PACKERS<br>360</div>
+
+          <div class="brand-info">
+            <h3>GB Packers 360</h3>
+            <span class="brand-type">Green Bay Packers</span>
           </div>
-          <div class="project-info">
-            <h3>Fútbol Mexicano 360</h3>
-            <p>La Liga MX, sus clubes, sus historias y el fútbol de México.</p>
-          </div>
-          <span class="brand-label">Fútbol</span>
         </div>
 
-      </nav>
+        <p class="description">
+          News, analysis, game coverage and fan perspectives for Green Bay
+          Packers supporters.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/search/top?q=GB%20Packers%20360"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GB Packers 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/gbpackers360/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GB Packers 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
+      <!-- FUTBOL MEXICANO 360 -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo placeholder">FM<br>360</div>
+
+          <div class="brand-info">
+            <h3>Futbol Mexicano 360</h3>
+            <span class="brand-type">Selección Mexicana y Liga MX</span>
+          </div>
+        </div>
+
+        <p class="description">
+          Everything about Mexican football, from the Mexican national team
+          to Liga MX, club rivalries, news and match-day coverage.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/futbolmexicano360"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Futbol Mexicano 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/futbolmexicano360/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Futbol Mexicano 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
+      <!-- AMERICA 360 - ODIAME MAS -->
+      <article class="media-card">
+        <div class="card-top">
+          <div class="brand-logo placeholder">AMÉRICA<br>360</div>
+
+          <div class="brand-info">
+            <h3>América 360 - Ódiame Más</h3>
+            <span class="brand-type">Club América</span>
+          </div>
+        </div>
+
+        <p class="description">
+          The home of Club América history, news, rivalries, analysis and
+          the passion of Americanista supporters.
+        </p>
+
+        <div class="social-links">
+          <a
+            class="social-link website"
+            href="https://odiamemas.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+            </svg>
+            Website
+          </a>
+
+          <a
+            class="social-link facebook"
+            href="https://www.facebook.com/search/top?q=Am%C3%A9rica%20360%20%C3%93diame%20M%C3%A1s"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="América 360 on Facebook"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H7v3.2h2.8V21h3.7Z"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/odiamemas360/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="América 360 on Instagram"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </article>
+
     </section>
 
-    <footer>
-      &copy; 2026 Zona360. Todos los derechos reservados.
-    </footer>
+    <section class="network-note">
+      <h2>One Network. Every Angle.</h2>
+      <p>
+        Zona 360 brings together independent sports communities under one
+        network, with dedicated coverage for the teams, leagues and fans
+        who make sports special.
+      </p>
+    </section>
+
   </main>
+
+  <footer>
+    <p><strong>Zona 360</strong> · Sports Media Network</p>
+    <p>Independent coverage. Passionate communities. Sports from every angle.</p>
+  </footer>
+
 </body>
 </html>
+```
